@@ -1,0 +1,2677 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Inspection AI</title>
+
+<style>
+
+/* RESET */
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Segoe UI, sans-serif;
+scroll-behavior:smooth;
+}
+
+/* COLORS */
+
+:root{
+--primary:#4F46E5;
+--secondary:#7C3AED;
+--accent:#EC4899;
+--text:#0F172A;
+--bg:#F8FAFC;
+}
+
+/* HERO */
+
+.hero{
+padding:160px 8%;
+background:var(--bg);
+}
+
+.hero-container{
+max-width:1100px;
+margin:auto;
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:60px;
+align-items:center;
+}
+
+.hero h1{
+font-size:44px;
+color:var(--text);
+margin-bottom:20px;
+}
+
+.hero p{
+color:#555;
+line-height:1.7;
+margin-bottom:25px;
+}
+
+.hero-buttons{
+display:flex;
+gap:15px;
+}
+
+.btn{
+padding:12px 24px;
+border-radius:6px;
+text-decoration:none;
+font-weight:600;
+}
+
+.btn-primary{
+background:var(--primary);
+color:white;
+}
+
+.btn-secondary{
+border:1px solid var(--primary);
+color:var(--primary);
+}
+
+.hero img{
+width:100%;
+}
+
+/* PLATFORM */
+
+.platform{
+padding:120px 8%;
+background:white;
+}
+
+.section-title{
+text-align:center;
+font-size:34px;
+margin-bottom:10px;
+}
+
+.section-sub{
+text-align:center;
+color:#666;
+margin-bottom:50px;
+}
+
+.platform-grid{
+max-width:1100px;
+margin:auto;
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:30px;
+}
+
+.platform-card{
+background:#f9fafb;
+padding:25px;
+border-radius:10px;
+text-align:center;
+transition:.3s;
+}
+
+.platform-card:hover{
+transform:translateY(-6px);
+box-shadow:0 10px 30px rgba(0,0,0,0.08);
+}
+
+.platform-img{
+width:100%;
+height:160px;
+object-fit:contain;
+margin-bottom:15px;
+}
+
+/* PROCESS */
+
+.process{
+padding:120px 8%;
+background:#f9fafb;
+}
+
+.process-grid{
+max-width:1100px;
+margin:auto;
+display:grid;
+grid-template-columns:repeat(4,1fr);
+gap:30px;
+text-align:center;
+}
+
+.process img{
+width:100%;
+height:150px;
+object-fit:contain;
+margin-bottom:10px;
+}
+
+/* PRICING */
+
+.pricing{
+padding:120px 8%;
+background:white;
+}
+
+.pricing-grid{
+max-width:1100px;
+margin:auto;
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:30px;
+}
+
+.price-card{
+border:1px solid #eee;
+padding:35px;
+border-radius:10px;
+text-align:center;
+}
+
+.price-card h3{
+margin-bottom:10px;
+}
+
+.price-card ul{
+list-style:none;
+margin:20px 0;
+}
+
+.price-card li{
+margin:8px 0;
+color:#555;
+}
+
+/* FAQ */
+
+.faq{
+padding:120px 8%;
+background:black;
+color:white;
+}
+
+.faq-container{
+max-width:800px;
+margin:auto;
+}
+
+.faq-item{
+border-bottom:1px solid #333;
+padding:18px 0;
+}
+
+.faq-question{
+display:flex;
+justify-content:space-between;
+cursor:pointer;
+}
+
+.faq-answer{
+display:none;
+color:#ccc;
+margin-top:8px;
+}
+
+/* CONTACT */
+
+.contact{
+padding:120px 8%;
+background:white;
+}
+
+.contact-container{
+max-width:1000px;
+margin:auto;
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:50px;
+}
+
+.contact input,
+.contact textarea{
+width:100%;
+padding:12px;
+margin-bottom:15px;
+border:1px solid #ddd;
+border-radius:6px;
+}
+
+/* FOOTER */
+
+.footer{
+background:#111;
+color:#aaa;
+padding:20px;
+text-align:center;
+}
+
+/* MOBILE */
+
+@media(max-width:900px){
+
+.nav-links{
+display:none;
+position:absolute;
+top:60px;
+left:0;
+width:100%;
+background:white;
+flex-direction:column;
+padding:20px;
+}
+
+.menu-btn{
+display:block;
+}
+
+.hero-container,
+.platform-grid,
+.process-grid,
+.pricing-grid,
+.contact-container{
+grid-template-columns:1fr;
+}
+
+}
+
+</style>
+</head>
+
+<body>
+
+
+</header>
+<header class="navbar">
+
+<div class="nav-container">
+
+<div class="logo">Inspection AI</div>
+
+<nav id="navMenu">
+
+<a href="#home">Home</a>
+<a href="#about">About</a>
+<a href="#process">Process</a>
+<a href="#platform">Platform</a>
+<a href="#pricing">Pricing</a>
+<a href="#faq">FAQ</a>
+<a href="#contact">Contact</a>
+
+</nav>
+
+<div class="menu-toggle" id="menuToggle">
+<span></span>
+<span></span>
+<span></span>
+</div>
+
+</div>
+
+</header>
+
+
+
+<style>
+
+/* NAVBAR */
+
+.navbar{
+width:100%;
+background:linear-gradient(135deg,#ADD8E6,#00008B,#513B1C);
+padding:11px 8%;
+position:fixed;
+top:0;
+left:0;
+z-index:1000;
+font-family:'Segoe UI',sans-serif;
+box-shadow:0 3px 15px rgba(0,0,0,0.15);
+}
+
+/* CONTAINER */
+
+.nav-container{
+max-width:1200px;
+margin:auto;
+display:flex;
+align-items:center;
+justify-content:space-between;
+}
+
+/* LOGO */
+
+.logo{
+font-size:22px;
+font-weight:700;
+color:white;
+}
+
+/* NAV LINKS */
+
+#navMenu{
+display:flex;
+gap:35px;
+align-items:center;
+}
+
+/* LINKS */
+
+#navMenu a{
+text-decoration:none;
+color:white;
+font-size:15px;
+font-weight:500;
+position:relative;
+}
+
+/* HOVER UNDERLINE */
+
+#navMenu a::after{
+content:"";
+position:absolute;
+left:0;
+bottom:-5px;
+width:0%;
+height:2px;
+background:white;
+transition:0.3s;
+}
+
+#navMenu a:hover::after{
+width:100%;
+}
+
+/* HAMBURGER */
+
+.menu-toggle{
+display:none;
+flex-direction:column;
+gap:5px;
+cursor:pointer;
+}
+
+.menu-toggle span{
+width:25px;
+height:3px;
+background:white;
+display:block;
+}
+
+/* MOBILE */
+
+@media(max-width:900px){
+
+#navMenu{
+position:absolute;
+top:70px;
+left:0;
+width:100%;
+background:linear-gradient(135deg,#ADD8E6,#00008B,#513B1C);
+flex-direction:column;
+padding:25px 0;
+gap:20px;
+display:none;
+}
+
+#navMenu.active{
+display:flex;
+}
+
+.menu-toggle{
+display:flex;
+}
+
+}
+
+</style>
+
+
+
+<script>
+
+const toggle = document.getElementById("menuToggle");
+const menu = document.getElementById("navMenu");
+
+/* OPEN CLOSE MENU */
+
+toggle.addEventListener("click",()=>{
+menu.classList.toggle("active");
+});
+
+/* CLOSE MENU WHEN LINK CLICKED */
+
+document.querySelectorAll("#navMenu a").forEach(link=>{
+
+link.addEventListener("click",()=>{
+
+menu.classList.remove("active");
+
+});
+
+});
+
+/* SMOOTH SCROLL */
+
+document.querySelectorAll('a[href^="#"]').forEach(anchor=>{
+
+anchor.addEventListener("click",function(e){
+
+e.preventDefault();
+
+document.querySelector(this.getAttribute("href")).scrollIntoView({
+behavior:"smooth"
+});
+
+});
+
+});
+
+</script>
+<section class="hero-section" id="home">
+
+<div class="hero-container">
+
+<!-- LEFT TEXT -->
+
+<div class="hero-left">
+
+<h1>AI-Powered Food Safety Compliance for Modern Kitchens</h1>
+
+<div class="hero-divider"></div>
+
+<p class="hero-text">
+Inspection AI is a mobile-first Food Safety Management System
+that digitises HACCP checks and captures real-time compliance evidence.
+</p>
+
+<p class="hero-text">
+Staff complete safety tasks on mobile devices while the platform
+automatically tracks deviations and generates inspection-ready reports.
+</p>
+
+<div class="hero-buttons">
+
+<a href="#platform" class="btn-primary">Explore Platform</a>
+
+<a href="#contact" class="btn-secondary">Request Demo</a>
+
+</div>
+
+</div>
+
+
+<!-- RIGHT IMAGE -->
+
+<div class="hero-right">
+
+<img src="c.jpeg" alt="Inspection AI Food Safety Platform">
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<style>
+
+/* COLOR VARIABLES */
+
+:root{
+--lightblue:#ADD8E6;
+--darkblue:#00008B;
+--brown:#513B1C;
+--text:#444;
+--white:#ffffff;
+}
+
+
+/* HERO SECTION */
+
+.hero-section{
+padding:120px 8%;
+background:white;
+font-family:'Segoe UI',sans-serif;
+}
+
+
+/* CONTAINER */
+
+.hero-container{
+max-width:1200px;
+margin:auto;
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:60px;
+align-items:center;
+}
+
+
+/* LEFT */
+
+.hero-left h1{
+font-size:46px;
+color:var(--darkblue);
+margin-bottom:12px;
+line-height:1.2;
+}
+
+
+/* DIVIDER */
+
+.hero-divider{
+width:70px;
+height:4px;
+background:linear-gradient(135deg,#ADD8E6,#00008B,#513B1C);
+margin:15px 0 25px 0;
+border-radius:3px;
+}
+
+
+/* TEXT */
+
+.hero-text{
+color:var(--text);
+font-size:17px;
+line-height:1.7;
+margin-bottom:20px;
+max-width:520px;
+}
+
+
+/* BUTTONS */
+
+.hero-buttons{
+display:flex;
+gap:15px;
+margin-top:10px;
+}
+
+
+/* PRIMARY BUTTON */
+
+.btn-primary{
+background:linear-gradient(135deg,#ADD8E6,#00008B,#513B1C);
+color:white;
+padding:13px 26px;
+border-radius:6px;
+text-decoration:none;
+font-weight:600;
+transition:0.3s;
+}
+
+.btn-primary:hover{
+opacity:0.9;
+transform:translateY(-2px);
+}
+
+
+/* SECONDARY BUTTON */
+
+.btn-secondary{
+border:2px solid #00008B;
+color:#00008B;
+padding:13px 26px;
+border-radius:6px;
+text-decoration:none;
+font-weight:600;
+transition:0.3s;
+}
+
+.btn-secondary:hover{
+background:#00008B;
+color:white;
+}
+
+
+/* IMAGE */
+
+.hero-right img{
+width:100%;
+border-radius:12px;
+box-shadow:0 20px 40px rgba(0,0,0,0.15);
+}
+
+
+/* MOBILE */
+
+@media(max-width:900px){
+
+.hero-section{
+padding:80px 6%;
+}
+
+.hero-container{
+grid-template-columns:1fr;
+gap:35px;
+text-align:center;
+}
+
+.hero-left h1{
+font-size:32px;
+}
+
+.hero-divider{
+margin:15px auto 25px auto;
+}
+
+.hero-text{
+margin:auto;
+font-size:16px;
+max-width:100%;
+}
+
+.hero-buttons{
+justify-content:center;
+flex-wrap:wrap;
+}
+
+.hero-right{
+margin-top:20px;
+}
+
+}
+
+</style>
+
+
+
+<script>
+
+/* Smooth Scroll */
+
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+
+anchor.addEventListener("click", function(e) {
+
+e.preventDefault();
+
+document.querySelector(this.getAttribute("href")).scrollIntoView({
+behavior:"smooth"
+});
+
+});
+
+});
+
+</script>
+<section class="about-section" id="about">
+
+<div class="about-container">
+
+<!-- LEFT CONTENT -->
+
+<div class="about-left">
+
+<h2>About Inspection AI</h2>
+
+<div class="about-divider"></div>
+
+<p class="about-sub">
+AI-Driven Food Safety Compliance Platform
+</p>
+
+<p>
+Inspection AI is a modern Food Safety Management System designed
+to digitise HACCP monitoring routines and transform daily kitchen
+operations into verifiable compliance workflows.
+</p>
+
+<p>
+The platform replaces paper-based safety records with structured
+digital tasks, real-time monitoring, and inspection-ready evidence
+packs that help hospitality businesses maintain consistent food
+safety standards.
+</p>
+
+<div class="about-features">
+
+<div class="feature">Digital HACCP Monitoring</div>
+<div class="feature">Photo Evidence Verification</div>
+<div class="feature">Corrective Action Automation</div>
+<div class="feature">Inspection-Ready Evidence Packs</div>
+<div class="feature">Mobile-First Compliance Workflows</div>
+<div class="feature">AI-Assisted Risk Detection</div>
+
+</div>
+
+</div>
+
+
+<!-- RIGHT SIDE -->
+
+<div class="about-right">
+
+<div class="founder-box">
+
+<h3 class="founder-title">Founder</h3>
+
+<div class="founder-divider"></div>
+
+<p class="founder-sub">
+Technology Entrepreneur & Food Safety Compliance Innovator
+</p>
+
+<p>
+Inspection AI was founded by <strong>Sanjay Chikara</strong> with a
+vision to modernise how hospitality businesses manage food safety
+compliance. The platform focuses on transforming manual compliance
+processes into intelligent digital workflows.
+</p>
+
+<p>
+The founder brings strong expertise in digital systems, operational
+efficiency, and data-driven solutions, enabling businesses to
+maintain consistent safety standards while reducing administrative
+burden and improving inspection readiness.
+</p>
+
+<div class="founder-links">
+
+<a href="https://www.linkedin.com" target="_blank" class="linkedin-btn">
+LinkedIn
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<style>
+
+/* SECTION */
+
+.about-section{
+padding:140px 8%;
+background:linear-gradient(135deg,#ADD8E6,#00008B,#513B1C);
+font-family:'Segoe UI',sans-serif;
+}
+
+
+/* CONTAINER */
+
+.about-container{
+max-width:1150px;
+margin:auto;
+display:grid;
+grid-template-columns:1.3fr 1fr;
+gap:80px;
+align-items:center;
+}
+
+
+/* LEFT */
+
+.about-left h2{
+font-size:42px;
+margin-bottom:10px;
+color:white;
+}
+
+
+/* DIVIDER */
+
+.about-divider{
+width:70px;
+height:4px;
+background:white;
+margin-bottom:15px;
+border-radius:3px;
+}
+
+
+/* SUB */
+
+.about-sub{
+color:#f0f6ff;
+font-weight:600;
+margin-bottom:20px;
+letter-spacing:1px;
+}
+
+
+/* TEXT */
+
+.about-left p{
+color:#f0f6ff;
+line-height:1.8;
+margin-bottom:20px;
+font-size:16px;
+max-width:560px;
+}
+
+
+/* FEATURES */
+
+.about-features{
+margin-top:25px;
+display:grid;
+grid-template-columns:repeat(2,1fr);
+gap:12px;
+}
+
+.feature{
+background:rgba(255,255,255,0.1);
+padding:10px 14px;
+border-radius:6px;
+font-size:14px;
+border:1px solid rgba(255,255,255,0.3);
+color:white;
+}
+
+
+/* FOUNDER BOX */
+
+.founder-box{
+background:white;
+padding:35px;
+border-radius:10px;
+box-shadow:0 15px 40px rgba(0,0,0,0.25);
+}
+
+
+.founder-title{
+margin-bottom:5px;
+color:#00008B;
+font-size:24px;
+}
+
+.founder-divider{
+width:60px;
+height:3px;
+background:linear-gradient(135deg,#ADD8E6,#00008B,#513B1C);
+margin-bottom:10px;
+border-radius:2px;
+}
+
+.founder-sub{
+font-size:13px;
+color:#777;
+margin-bottom:15px;
+}
+
+.founder-box p{
+color:#555;
+line-height:1.7;
+margin-bottom:18px;
+}
+
+
+/* LINK BUTTON */
+
+.linkedin-btn{
+display:inline-block;
+padding:11px 22px;
+background:linear-gradient(135deg,#ADD8E6,#00008B,#513B1C);
+color:white;
+text-decoration:none;
+border-radius:6px;
+font-weight:600;
+transition:0.3s;
+}
+
+.linkedin-btn:hover{
+opacity:0.9;
+transform:translateY(-2px);
+}
+
+
+/* MOBILE */
+
+@media(max-width:900px){
+
+.about-section{
+padding:90px 6%;
+}
+
+.about-container{
+grid-template-columns:1fr;
+gap:40px;
+text-align:center;
+}
+
+.about-left h2{
+font-size:32px;
+}
+
+.about-left p{
+margin:auto;
+font-size:15px;
+max-width:100%;
+}
+
+.about-features{
+grid-template-columns:1fr;
+gap:10px;
+max-width:340px;
+margin:auto;
+}
+
+}
+
+</style>
+<section class="process-section" id="process">
+
+<div class="process-container">
+
+<h2 class="process-title">How Inspection AI Works</h2>
+
+<div class="process-divider"></div>
+
+<p class="process-sub">
+Inspection AI transforms traditional HACCP food safety routines into
+structured digital workflows. Staff complete safety checks on mobile
+devices while the platform verifies evidence, detects deviations,
+and produces inspection-ready compliance reports.
+</p>
+
+
+<div class="process-grid">
+
+<!-- STEP 1 -->
+
+<div class="process-card">
+
+<img src="i11.jpeg" class="process-img">
+
+<div class="step">01</div>
+
+<h3>Digital HACCP Tasks</h3>
+
+<p>
+Daily food safety tasks such as temperature checks, cleaning
+verification, delivery inspections, and allergen controls are
+scheduled automatically. Staff receive clear instructions
+through a mobile checklist to ensure consistent execution
+during every shift.
+</p>
+
+</div>
+
+
+<!-- STEP 2 -->
+
+<div class="process-card">
+
+<img src="i2.jpeg" class="process-img">
+
+<div class="step">02</div>
+
+<h3>Evidence Capture</h3>
+
+<p>
+When a task is completed, the system records structured
+evidence including photos, temperature readings, timestamps,
+staff identity, and device information. This creates a
+verifiable record that proves checks were completed correctly.
+</p>
+
+</div>
+
+
+<!-- STEP 3 -->
+
+<div class="process-card">
+
+<img src="i3.jpeg" class="process-img">
+
+<div class="step">03</div>
+
+<h3>Deviation Detection</h3>
+
+<p>
+If a safety limit is breached, the platform automatically
+detects the deviation and launches corrective action
+workflows. Staff are guided through required steps such as
+re-checks, stock isolation, or manager approval.
+</p>
+
+</div>
+
+
+<!-- STEP 4 -->
+
+<div class="process-card">
+
+<img src="i5.jpeg" class="process-img">
+
+<div class="step">04</div>
+
+<h3>Compliance & Inspection Reports</h3>
+
+<p>
+Inspection AI generates chronological compliance reports
+containing completed checks, incidents, corrective actions,
+and approvals. Managers can instantly export inspection-ready
+evidence packs for regulators or auditors.
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<style>
+
+/* SECTION */
+
+.process-section{
+padding:120px 8%;
+background:white;
+font-family:'Segoe UI',sans-serif;
+text-align:center;
+}
+
+
+/* TITLE */
+
+.process-title{
+font-size:38px;
+margin-bottom:10px;
+color:#00008B;
+font-weight:700;
+}
+
+
+/* DIVIDER */
+
+.process-divider{
+width:70px;
+height:4px;
+background:linear-gradient(135deg,#ADD8E6,#00008B,#513B1C);
+margin:15px auto 25px auto;
+border-radius:2px;
+}
+
+
+/* SUB TEXT */
+
+.process-sub{
+max-width:650px;
+margin:auto;
+margin-bottom:70px;
+color:#555;
+line-height:1.7;
+}
+
+
+/* GRID */
+
+.process-grid{
+max-width:1100px;
+margin:auto;
+display:grid;
+grid-template-columns:repeat(4,1fr);
+gap:30px;
+}
+
+
+/* CARD */
+
+.process-card{
+background:white;
+padding:25px;
+border-radius:10px;
+text-align:left;
+transition:0.3s;
+border:2px solid transparent;
+background-image:linear-gradient(white,white),
+linear-gradient(135deg,#ADD8E6,#00008B,#513B1C);
+background-origin:border-box;
+background-clip:padding-box,border-box;
+}
+
+
+.process-card:hover{
+transform:translateY(-8px);
+box-shadow:0 15px 35px rgba(0,0,0,0.1);
+}
+
+
+/* IMAGE */
+
+.process-img{
+width:100%;
+height:150px;
+object-fit:contain;
+margin-bottom:15px;
+}
+
+
+/* STEP */
+
+.step{
+font-size:13px;
+font-weight:700;
+color:#00008B;
+margin-bottom:8px;
+}
+
+
+/* TEXT */
+
+.process-card h3{
+margin-bottom:10px;
+color:#00008B;
+}
+
+.process-card p{
+color:#555;
+font-size:14px;
+line-height:1.6;
+}
+
+
+/* MOBILE */
+
+@media(max-width:900px){
+
+.process-grid{
+grid-template-columns:1fr;
+}
+
+}
+
+</style>
+
+
+
+<script>
+console.log("Inspection AI process section loaded");
+</script>
+<section class="platform-section" id="platform">
+
+<div class="platform-container">
+
+<h2 class="platform-title">Inspection AI Platform</h2>
+
+<div class="platform-divider"></div>
+
+<p class="platform-sub">
+Inspection AI is a mobile-first Food Safety Management System that
+turns HACCP compliance into structured digital workflows. Staff
+complete safety tasks through guided mobile checklists while the
+platform captures verifiable evidence, detects deviations, and
+generates inspection-ready compliance documentation.
+</p>
+
+
+<div class="platform-grid">
+
+<!-- CARD 1 -->
+
+<div class="platform-card">
+
+<img src="i6.jpeg" class="platform-img">
+
+<h3>Mobile HACCP Task Engine</h3>
+
+<p class="short-text">
+Digitised daily food safety routines for kitchen teams.
+</p>
+
+<p class="more-text">
+Inspection AI converts HACCP and PRP procedures into role-based
+mobile tasks such as temperature checks, cleaning verification,
+delivery inspections, and allergen controls. Staff complete
+structured checklists during each shift while managers monitor
+completion status through real-time dashboards.
+</p>
+
+<button class="learn-btn">Learn More</button>
+
+</div>
+
+
+<!-- CARD 2 -->
+
+<div class="platform-card">
+
+<img src="i7.jpeg" class="platform-img">
+
+<h3>Evidence Capture System</h3>
+
+<p class="short-text">
+Verifiable compliance proof recorded at source.
+</p>
+
+<p class="more-text">
+Each completed task captures structured evidence including
+photos, temperature readings, timestamps, device identity,
+and staff credentials. This evidence is automatically linked
+to the task record to create a defensible compliance trail
+for inspections and audits.
+</p>
+
+<button class="learn-btn">Learn More</button>
+
+</div>
+
+
+<!-- CARD 3 -->
+
+<div class="platform-card">
+
+<img src="i8.jpeg" class="platform-img">
+
+<h3>Deviation & Incident Engine</h3>
+
+<p class="short-text">
+Automated detection of food safety failures.
+</p>
+
+<p class="more-text">
+When a safety limit is breached, the platform automatically
+opens a deviation incident. Guided corrective action playbooks
+lead staff through required steps such as re-checks, stock
+isolation, disposal decisions, and manager approvals to ensure
+consistent responses.
+</p>
+
+<button class="learn-btn">Learn More</button>
+
+</div>
+
+
+<!-- CARD 4 -->
+
+<div class="platform-card">
+
+<img src="i9.jpeg" class="platform-img">
+
+<h3>Inspection Evidence Packs</h3>
+
+<p class="short-text">
+One-click compliance reporting for auditors.
+</p>
+
+<p class="more-text">
+Inspection AI automatically generates chronological evidence
+packs showing completed checks, incidents, corrective actions,
+and manager approvals. These inspection-ready reports help
+businesses demonstrate due diligence during regulatory visits.
+</p>
+
+<button class="learn-btn">Learn More</button>
+
+</div>
+
+
+<!-- CARD 5 -->
+
+<div class="platform-card">
+
+<img src="i10.jpeg" class="platform-img">
+
+<h3>AI Proof Verification</h3>
+
+<p class="short-text">
+AI ensures safety evidence is valid and reliable.
+</p>
+
+<p class="more-text">
+On-device computer vision verifies that photos contain
+required objects such as probe displays, sanitiser labels,
+or equipment markers before a task can be completed.
+This reduces fake or incomplete evidence and improves
+compliance reliability.
+</p>
+
+<button class="learn-btn">Learn More</button>
+
+</div>
+
+
+<!-- CARD 6 -->
+
+<div class="platform-card">
+
+<img src="p10.jpeg" class="platform-img">
+
+<h3>Risk Analytics & Dashboards</h3>
+
+<p class="short-text">
+Identify compliance risks before inspections occur.
+</p>
+
+<p class="more-text">
+The platform analyses task completion patterns, recurring
+deviations, missed checks and training gaps to calculate
+site-level risk indicators. Managers receive dashboards and
+alerts highlighting potential compliance vulnerabilities.
+</p>
+
+<button class="learn-btn">Learn More</button>
+
+</div>
+
+
+</div>
+</div>
+
+</section>
+
+
+
+<style>
+
+/* SECTION */
+
+.platform-section{
+padding:120px 8%;
+background:linear-gradient(135deg,#ADD8E6,#00008B,#513B1C);
+font-family:'Segoe UI',sans-serif;
+text-align:center;
+color:white;
+}
+
+
+/* TITLE */
+
+.platform-title{
+font-size:38px;
+margin-bottom:10px;
+font-weight:700;
+}
+
+
+/* DIVIDER */
+
+.platform-divider{
+width:70px;
+height:4px;
+background:linear-gradient(135deg,#ADD8E6,#00008B,#513B1C);
+margin:15px auto 25px auto;
+border-radius:2px;
+}
+
+
+/* SUBTEXT */
+
+.platform-sub{
+max-width:650px;
+margin:auto;
+margin-bottom:70px;
+line-height:1.7;
+color:#eaf7ff;
+}
+
+
+/* GRID */
+
+.platform-grid{
+max-width:1100px;
+margin:auto;
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:25px;
+}
+
+
+/* CARD */
+
+.platform-card{
+background:white;
+color:#333;
+padding:25px;
+border-radius:10px;
+transition:0.3s;
+text-align:left;
+}
+
+
+.platform-card:hover{
+transform:translateY(-8px);
+box-shadow:0 20px 40px rgba(0,0,0,0.2);
+}
+
+
+/* IMAGE */
+
+.platform-img{
+width:100%;
+height:160px;
+object-fit:contain;
+margin-bottom:15px;
+}
+
+
+/* TEXT */
+
+.platform-card h3{
+margin-bottom:8px;
+color:#00008B;
+}
+
+
+.short-text{
+color:#666;
+margin-bottom:10px;
+}
+
+
+.more-text{
+display:none;
+font-size:14px;
+color:#666;
+line-height:1.6;
+margin-bottom:10px;
+}
+
+
+/* BUTTON */
+
+.learn-btn{
+background:linear-gradient(135deg,#ADD8E6,#00008B,#513B1C);
+color:white;
+border:none;
+padding:10px 18px;
+border-radius:6px;
+cursor:pointer;
+font-weight:600;
+}
+
+
+.learn-btn:hover{
+opacity:0.9;
+}
+
+
+/* MOBILE */
+
+@media(max-width:900px){
+
+.platform-grid{
+grid-template-columns:1fr;
+}
+
+}
+
+</style>
+
+
+
+<script>
+
+const buttons = document.querySelectorAll(".learn-btn");
+
+buttons.forEach(btn => {
+
+btn.addEventListener("click", function(){
+
+const card = this.parentElement;
+const more = card.querySelector(".more-text");
+
+if(more.style.display === "block"){
+
+more.style.display = "none";
+this.innerText = "Learn More";
+
+}else{
+
+more.style.display = "block";
+this.innerText = "Show Less";
+
+}
+
+});
+
+});
+
+</script>
+<section class="pricing-section" id="pricing">
+
+<div class="pricing-container">
+
+<h2 class="pricing-title">Inspection AI Platform Pricing</h2>
+
+<div class="pricing-divider"></div>
+
+<p class="pricing-sub">
+Inspection AI is a mobile-first Food Safety Management System that digitises
+HACCP monitoring routines, captures verifiable evidence, and generates
+inspection-ready compliance reports for restaurants and hospitality businesses.
+</p>
+
+<div class="pricing-grid">
+
+
+<!-- STARTER -->
+
+<div class="pricing-card">
+
+<h3>Starter</h3>
+
+<p class="price">£49 / site / month</p>
+
+<ul>
+<li><span>✔</span> Digital HACCP task workflows</li>
+<li><span>✔</span> Temperature & cleaning logs</li>
+<li><span>✔</span> Photo evidence capture</li>
+<li><span>✔</span> Staff task scheduling</li>
+<li><span>✔</span> Basic compliance reports</li>
+<li><span>✔</span> Email support</li>
+</ul>
+
+<a href="#contact" class="pricing-btn">Start Plan</a>
+
+</div>
+
+
+
+<!-- PROFESSIONAL -->
+
+<div class="pricing-card featured">
+
+<div class="badge">Most Popular</div>
+
+<h3>Professional</h3>
+
+<p class="price">£129 / site / month</p>
+
+<ul>
+<li><span>✔</span> Full HACCP workflow automation</li>
+<li><span>✔</span> Corrective action playbooks</li>
+<li><span>✔</span> Inspection-ready evidence packs</li>
+<li><span>✔</span> Manager approvals & audit trails</li>
+<li><span>✔</span> Multi-device mobile dashboard</li>
+<li><span>✔</span> Priority support</li>
+</ul>
+
+<a href="#contact" class="pricing-btn">Choose Plan</a>
+
+</div>
+
+
+
+<!-- ENTERPRISE -->
+
+<div class="pricing-card">
+
+<h3>Enterprise</h3>
+
+<p class="price">£299+ / site / month</p>
+
+<ul>
+<li><span>✔</span> Multi-site management dashboard</li>
+<li><span>✔</span> AI evidence verification</li>
+<li><span>✔</span> Risk fingerprint analytics</li>
+<li><span>✔</span> IoT temperature sensor integration</li>
+<li><span>✔</span> Custom compliance templates</li>
+<li><span>✔</span> Dedicated onboarding & training</li>
+</ul>
+
+<a href="#contact" class="pricing-btn">Contact Sales</a>
+
+</div>
+
+
+</div>
+</div>
+</section>
+
+
+
+<style>
+
+/* COLORS */
+
+:root{
+--lightblue:#ADD8E6;
+--darkblue:#00008B;
+--brown:#513B1C;
+--white:#ffffff;
+}
+
+
+/* SECTION */
+
+.pricing-section{
+padding:120px 8%;
+background:white;
+font-family:'Segoe UI',sans-serif;
+text-align:center;
+}
+
+
+/* TITLE */
+
+.pricing-title{
+font-size:38px;
+color:var(--darkblue);
+font-weight:700;
+margin-bottom:10px;
+}
+
+
+/* DIVIDER */
+
+.pricing-divider{
+width:80px;
+height:4px;
+background:linear-gradient(135deg,#ADD8E6,#00008B,#513B1C);
+margin:15px auto 25px auto;
+border-radius:2px;
+}
+
+
+/* SUBTEXT */
+
+.pricing-sub{
+max-width:650px;
+margin:auto;
+color:#555;
+line-height:1.7;
+margin-bottom:70px;
+}
+
+
+/* GRID */
+
+.pricing-grid{
+max-width:1100px;
+margin:auto;
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:35px;
+}
+
+
+/* CARD */
+
+.pricing-card{
+background:#ffffff;
+padding:40px 30px;
+border-radius:12px;
+border:2px solid #e6e6e6;
+transition:all 0.4s ease;
+position:relative;
+text-align:left;
+}
+
+
+.pricing-card:hover{
+transform:translateY(-10px);
+box-shadow:0 20px 45px rgba(0,0,0,0.15);
+border-color:var(--darkblue);
+}
+
+
+/* FEATURED */
+
+.featured{
+border:2px solid var(--darkblue);
+transform:scale(1.05);
+}
+
+
+/* BADGE */
+
+.badge{
+position:absolute;
+top:-14px;
+left:50%;
+transform:translateX(-50%);
+background:linear-gradient(135deg,#ADD8E6,#00008B,#513B1C);
+color:white;
+font-size:12px;
+padding:6px 16px;
+border-radius:20px;
+font-weight:600;
+}
+
+
+/* PRICE */
+
+.price{
+margin:15px 0 22px;
+font-weight:600;
+color:var(--darkblue);
+font-size:16px;
+}
+
+
+/* LIST */
+
+.pricing-card ul{
+list-style:none;
+padding:0;
+margin-bottom:28px;
+}
+
+.pricing-card li{
+margin:12px 0;
+color:#444;
+font-size:14px;
+display:flex;
+align-items:center;
+}
+
+
+.pricing-card li span{
+color:#513B1C;
+font-weight:bold;
+margin-right:10px;
+}
+
+
+/* BUTTON */
+
+.pricing-btn{
+display:inline-block;
+padding:12px 24px;
+background:linear-gradient(135deg,#ADD8E6,#00008B,#513B1C);
+color:white;
+border-radius:6px;
+text-decoration:none;
+font-weight:600;
+transition:0.3s;
+}
+
+.pricing-btn:hover{
+opacity:0.9;
+}
+
+
+/* MOBILE */
+
+@media(max-width:900px){
+
+.pricing-grid{
+grid-template-columns:1fr;
+}
+
+.featured{
+transform:none;
+}
+
+}
+
+</style>
+<section class="faq-section" id="faq">
+
+<div class="faq-container">
+
+<h2 class="faq-title">Frequently Asked Questions</h2>
+
+<div class="faq-divider"></div>
+
+<p class="faq-sub">
+Learn how Inspection AI helps hospitality businesses digitise HACCP
+food safety routines, automate compliance monitoring, and produce
+inspection-ready evidence using a modern Food Safety Management System.
+</p>
+
+
+<div class="faq-list">
+
+
+<!-- FAQ 1 -->
+<div class="faq-item">
+
+<div class="faq-question">
+<span>What is Inspection AI?</span>
+<button class="toggle">+</button>
+</div>
+
+<div class="faq-answer">
+<p>
+Inspection AI is a mobile-first Food Safety Management System (FSMS)
+that digitises HACCP monitoring tasks such as temperature checks,
+cleaning routines, allergen controls, and delivery inspections.
+Staff complete tasks using a mobile device while the platform captures
+time-stamped evidence and generates inspection-ready compliance records.
+</p>
+</div>
+
+</div>
+
+
+<!-- FAQ 2 -->
+<div class="faq-item">
+
+<div class="faq-question">
+<span>How does Inspection AI improve food safety compliance?</span>
+<button class="toggle">+</button>
+</div>
+
+<div class="faq-answer">
+<p>
+The platform converts paper-based safety logs into structured digital
+workflows. Tasks are scheduled for staff, evidence is captured through
+photos and data inputs, and deviations automatically trigger corrective
+action workflows with manager approval.
+</p>
+</div>
+
+</div>
+
+
+<!-- FAQ 3 -->
+<div class="faq-item">
+
+<div class="faq-question">
+<span>What types of checks can the platform monitor?</span>
+<button class="toggle">+</button>
+</div>
+
+<div class="faq-answer">
+<p>
+Inspection AI supports multiple HACCP routines including temperature
+checks, cleaning verification, allergen control procedures, delivery
+inspection logs, and equipment safety monitoring across daily kitchen
+operations.
+</p>
+</div>
+
+</div>
+
+
+<!-- FAQ 4 -->
+<div class="faq-item">
+
+<div class="faq-question">
+<span>How does the platform handle food safety deviations?</span>
+<button class="toggle">+</button>
+</div>
+
+<div class="faq-answer">
+<p>
+When a safety limit is exceeded, the system automatically opens a
+corrective-action workflow. Staff follow guided steps such as rechecking
+equipment, isolating affected food items, and recording actions until
+a manager approves and closes the incident.
+</p>
+</div>
+
+</div>
+
+
+<!-- FAQ 5 -->
+<div class="faq-item">
+
+<div class="faq-question">
+<span>What is an inspection-ready evidence pack?</span>
+<button class="toggle">+</button>
+</div>
+
+<div class="faq-answer">
+<p>
+Inspection AI can generate a complete evidence pack that includes
+chronological records of safety checks, corrective actions, manager
+approvals, and photo evidence. This allows businesses to demonstrate
+due diligence quickly during health inspections.
+</p>
+</div>
+
+</div>
+
+
+<!-- FAQ 6 -->
+<div class="faq-item">
+
+<div class="faq-question">
+<span>Who should use Inspection AI?</span>
+<button class="toggle">+</button>
+</div>
+
+<div class="faq-answer">
+<p>
+Inspection AI is designed for restaurants, takeaways, cafes,
+hospitality SMEs, and food safety consultants who want to digitise
+their HACCP compliance processes and maintain consistent operational
+food safety standards.
+</p>
+</div>
+
+</div>
+
+
+</div>
+</div>
+</section>
+
+
+
+<style>
+
+/* FAQ SECTION */
+
+.faq-section{
+padding:120px 8%;
+background:linear-gradient(135deg,#ADD8E6,#00008B,#513B1C);
+font-family:'Segoe UI',sans-serif;
+}
+
+
+/* CONTAINER */
+
+.faq-container{
+max-width:900px;
+margin:auto;
+}
+
+
+/* TITLE */
+
+.faq-title{
+text-align:center;
+color:white;
+font-size:36px;
+margin-bottom:10px;
+}
+
+
+/* DIVIDER */
+
+.faq-divider{
+width:70px;
+height:3px;
+background:linear-gradient(135deg,#ADD8E6,#00008B,#513B1C);
+margin:15px auto 25px auto;
+border-radius:2px;
+}
+
+
+/* SUBTEXT */
+
+.faq-sub{
+text-align:center;
+color:#f0f7ff;
+margin-bottom:45px;
+line-height:1.6;
+}
+
+
+/* LIST */
+
+.faq-list{
+display:flex;
+flex-direction:column;
+gap:16px;
+}
+
+
+/* FAQ BOX */
+
+.faq-item{
+background:white;
+border-radius:8px;
+overflow:hidden;
+box-shadow:0 6px 18px rgba(0,0,0,0.1);
+}
+
+
+/* QUESTION */
+
+.faq-question{
+display:flex;
+justify-content:space-between;
+align-items:center;
+cursor:pointer;
+color:white;
+font-size:16px;
+padding:16px 18px;
+background:linear-gradient(135deg,#ADD8E6,#00008B,#513B1C);
+}
+
+
+/* TOGGLE BUTTON */
+
+.toggle{
+background:white;
+border:none;
+color:#00008B;
+font-size:18px;
+width:30px;
+height:30px;
+border-radius:4px;
+cursor:pointer;
+}
+
+
+/* ANSWER */
+
+.faq-answer{
+display:none;
+padding:16px 18px;
+}
+
+.faq-answer p{
+color:#333;
+line-height:1.6;
+}
+
+
+/* MOBILE */
+
+@media(max-width:900px){
+
+.faq-title{
+font-size:28px;
+}
+
+}
+
+</style>
+
+
+
+<script>
+
+const questions = document.querySelectorAll(".faq-question");
+
+questions.forEach(q=>{
+
+q.addEventListener("click",()=>{
+
+const answer = q.nextElementSibling;
+const btn = q.querySelector(".toggle");
+
+if(answer.style.display === "block"){
+
+answer.style.display = "none";
+btn.innerHTML = "+";
+
+}else{
+
+document.querySelectorAll(".faq-answer").forEach(a=>{
+a.style.display = "none";
+});
+
+document.querySelectorAll(".toggle").forEach(b=>{
+b.innerHTML = "+";
+});
+
+answer.style.display = "block";
+btn.innerHTML = "−";
+
+}
+
+});
+
+});
+
+</script>
+<section class="contact-section" id="contact">
+
+<div class="contact-container">
+
+<!-- LEFT SIDE -->
+<div class="contact-left">
+
+<h2>Contact Inspection AI Team</h2>
+<div class="company-divider"></div>
+
+<p class="contact-text">
+Inspection AI is a mobile-first Food Safety Management System that digitizes HACCP-based monitoring for hospitality businesses. Our platform replaces paper records with real-time digital workflows and evidence-based compliance tracking.
+</p>
+
+<p class="contact-text">
+Using automated tasks, photo verification, and AI-assisted monitoring, Inspection AI helps restaurants and food businesses maintain food safety standards while reducing administrative workload and improving inspection readiness.
+</p>
+
+<div class="contact-info">
+
+<div class="info-item">
+<strong>Email:</strong>
+<span>inspectionworksuk@outlook.com</span>
+</div>
+
+<div class="info-item">
+<strong>Phone:</strong>
+<span>+44 7767 347336</span>
+</div>
+
+<div class="info-item">
+<strong>Address:</strong>
+<span>162 West Way, Stafford, United Kingdom</span>
+</div>
+
+</div>
+
+</div>
+
+
+<!-- RIGHT SIDE FORM -->
+<div class="contact-right">
+
+<form class="contact-form"
+action="https://api.web3forms.com/submit"
+method="POST">
+
+<input type="hidden" name="access_key"
+value="YOUR_ACCESS_KEY">
+
+<input type="text" name="name" placeholder="Full Name" required>
+<input type="email" name="email" placeholder="Business Email" required>
+<input type="tel" name="phone" placeholder="Phone Number">
+
+<textarea name="message" rows="4"
+placeholder="Tell us about your food safety requirements or project"></textarea>
+
+<button type="submit">Send Message</button>
+
+<p class="note">
+Your message will be securely delivered to the Inspection AI solutions team.
+</p>
+
+</form>
+
+</div>
+
+</div>
+
+</section>
+
+
+<style>
+
+/* COLORS */
+:root{
+--lightblue:#ADD8E6;
+--darkblue:#00008B;
+--brown:#513B1C;
+--text:#444;
+--white:#ffffff;
+}
+
+
+/* SECTION */
+
+.contact-section{
+padding:120px 8%;
+background:#ffffff;
+font-family:'Segoe UI',sans-serif;
+}
+
+
+/* CONTAINER */
+
+.contact-container{
+max-width:1100px;
+margin:auto;
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:70px;
+align-items:flex-start;
+}
+
+
+/* LEFT */
+
+.contact-left h2{
+font-size:36px;
+color:var(--darkblue);
+margin-bottom:20px;
+}
+
+.contact-text{
+color:var(--text);
+line-height:1.8;
+margin-bottom:16px;
+max-width:460px;
+}
+
+
+/* INFO BOX */
+
+.contact-info{
+margin-top:30px;
+padding:22px;
+background:linear-gradient(135deg,#ADD8E6,#ffffff,#ADD8E6);
+border-left:4px solid var(--brown);
+border-radius:6px;
+}
+
+.info-item{
+margin-bottom:12px;
+font-size:14px;
+color:#333;
+}
+
+.info-item strong{
+color:var(--darkblue);
+margin-right:6px;
+}
+
+
+/* FORM */
+
+.contact-form{
+display:flex;
+flex-direction:column;
+gap:14px;
+background:linear-gradient(135deg,#ADD8E6,#ffffff);
+padding:35px;
+border-radius:10px;
+border:1px solid #e5e5e5;
+box-shadow:0 10px 25px rgba(0,0,0,0.06);
+}
+
+
+/* INPUT */
+
+.contact-form input,
+.contact-form textarea{
+padding:13px;
+border:1px solid #ddd;
+font-size:14px;
+outline:none;
+background:white;
+border-radius:5px;
+}
+
+
+/* FOCUS */
+
+.contact-form input:focus,
+.contact-form textarea:focus{
+border-color:var(--darkblue);
+box-shadow:0 0 0 2px rgba(0,0,139,0.2);
+}
+
+
+/* BUTTON */
+
+.contact-form button{
+margin-top:10px;
+background:linear-gradient(135deg,#ADD8E6,#00008B,#513B1C);
+color:white;
+border:none;
+padding:14px;
+font-weight:600;
+letter-spacing:1px;
+cursor:pointer;
+transition:0.3s;
+border-radius:6px;
+}
+
+.contact-form button:hover{
+opacity:0.9;
+transform:translateY(-2px);
+}
+
+
+/* DIVIDER */
+
+.company-divider{
+width:60px;
+height:3px;
+background:linear-gradient(135deg,#ADD8E6,#00008B,#513B1C);
+margin:8px 0 14px 0;
+border-radius:2px;
+}
+
+
+/* NOTE */
+
+.note{
+font-size:12px;
+color:#666;
+margin-top:10px;
+}
+
+
+/* MOBILE */
+
+@media(max-width:900px){
+
+.contact-container{
+grid-template-columns:1fr;
+gap:40px;
+}
+
+.contact-left{
+display:flex;
+flex-direction:column;
+align-items:center;
+text-align:center;
+}
+
+.company-divider{
+margin:16px auto 20px auto;
+}
+
+.contact-text{
+margin:auto;
+max-width:500px;
+}
+
+.contact-info{
+text-align:left;
+margin-top:30px;
+}
+
+}
+
+</style>
+
+
+
+<script>
+
+const form = document.querySelector(".contact-form");
+
+form.addEventListener("submit", function(){
+alert("Message Sent Successfully!");
+});
+
+</script>
+<footer class="footer">
+
+<div class="footer-container">
+
+<!-- LEFT -->
+
+<div class="footer-left">
+
+<h3>Inspection AI</h3>
+
+<div class="company-divider"></div>
+
+<p>
+Inspection AI is a mobile-first Food Safety Management System designed to help
+hospitality businesses digitise HACCP-based monitoring, automate compliance,
+and maintain verifiable food safety operations across daily kitchen workflows.
+</p>
+
+</div>
+
+
+<!-- CENTER -->
+
+<div class="footer-links">
+
+<h4>Platform</h4>
+
+<a href="#home">Home</a>
+<a href="#about">About</a>
+<a href="#platform">Platform</a>
+<a href="#process">Process</a>
+
+</div>
+
+
+<!-- RIGHT -->
+
+<div class="footer-links">
+
+<h4>Company</h4>
+
+<a href="#pricing">Pricing</a>
+<a href="#contact">Contact</a>
+<a href="#faq">FAQ</a>
+
+</div>
+
+</div>
+
+
+<!-- MAIN DIVIDER -->
+
+<div class="footer-divider"></div>
+
+
+<!-- COMPANY SUB TEXT -->
+
+<div class="footer-sub">
+
+<p>
+Inspection AI transforms traditional paper-based food safety records into
+structured digital workflows with photo verification, automated monitoring,
+and inspection-ready evidence packs. The platform enables restaurants and
+hospitality SMEs to maintain consistent HACCP compliance while reducing
+administrative workload and improving operational transparency.
+</p>
+
+</div>
+
+
+<!-- BOTTOM -->
+
+<div class="footer-bottom">
+
+<p>© 2026 Inspection AI. All rights reserved.</p>
+
+<button class="top-btn" onclick="scrollTopBtn()">↑</button>
+
+</div>
+
+</footer>
+
+
+
+<style>
+
+/* COLORS */
+
+:root{
+--lightblue:#ADD8E6;
+--darkblue:#00008B;
+--brown:#513B1C;
+--white:#ffffff;
+}
+
+
+/* FOOTER */
+
+.footer{
+background:linear-gradient(135deg,#ADD8E6,#00008B,#513B1C);
+color:var(--white);
+padding:70px 8% 25px;
+font-family:'Segoe UI',sans-serif;
+}
+
+
+/* CONTAINER */
+
+.footer-container{
+max-width:1100px;
+margin:auto;
+display:grid;
+grid-template-columns:1.5fr 1fr 1fr;
+gap:40px;
+}
+
+
+/* LEFT */
+
+.footer-left{
+display:flex;
+flex-direction:column;
+align-items:flex-start;
+}
+
+.footer-left h3{
+font-size:22px;
+margin-bottom:6px;
+}
+
+
+/* COMPANY DIVIDER */
+
+.company-divider{
+width:60px;
+height:3px;
+background:linear-gradient(135deg,#ADD8E6,#00008B,#513B1C);
+margin:8px 0 14px 0;
+border-radius:2px;
+}
+
+
+/* TEXT */
+
+.footer-left p{
+font-size:14px;
+line-height:1.6;
+max-width:420px;
+color:#eaf7ff;
+}
+
+
+/* LINKS */
+
+.footer-links{
+display:flex;
+flex-direction:column;
+}
+
+.footer-links h4{
+margin-bottom:12px;
+color:#ADD8E6;
+}
+
+.footer-links a{
+text-decoration:none;
+color:#e6f5ff;
+margin-bottom:8px;
+font-size:14px;
+transition:0.3s;
+}
+
+.footer-links a:hover{
+color:#ffffff;
+padding-left:5px;
+}
+
+
+/* MAIN DIVIDER */
+
+.footer-divider{
+max-width:1100px;
+height:1px;
+background:linear-gradient(135deg,#ADD8E6,#00008B,#513B1C);
+margin:40px auto 25px;
+}
+
+
+/* SUB TEXT */
+
+.footer-sub{
+max-width:900px;
+margin:auto;
+text-align:center;
+font-size:13px;
+line-height:1.7;
+color:#e6f5ff;
+padding-bottom:20px;
+}
+
+
+/* BOTTOM */
+
+.footer-bottom{
+max-width:1100px;
+margin:auto;
+display:flex;
+justify-content:space-between;
+align-items:center;
+border-top:1px solid rgba(255,255,255,0.25);
+padding-top:18px;
+font-size:13px;
+color:#e6f5ff;
+}
+
+
+/* BUTTON */
+
+.top-btn{
+background:#ADD8E6;
+color:#00008B;
+border:none;
+width:36px;
+height:36px;
+border-radius:50%;
+cursor:pointer;
+font-size:18px;
+font-weight:bold;
+transition:0.3s;
+}
+
+.top-btn:hover{
+background:white;
+}
+
+
+/* MOBILE */
+
+@media(max-width:900px){
+
+.footer-container{
+grid-template-columns:1fr;
+text-align:center;
+gap:35px;
+}
+
+.footer-left{
+align-items:center;
+}
+
+.footer-left p{
+margin:auto;
+max-width:500px;
+}
+
+.company-divider{
+margin:10px auto 16px auto;
+}
+
+.footer-links{
+align-items:center;
+}
+
+.footer-bottom{
+flex-direction:column;
+gap:15px;
+text-align:center;
+}
+
+.top-btn{
+width:40px;
+height:40px;
+font-size:20px;
+}
+
+}
+
+</style>
+
+
+
+<script>
+
+function scrollTopBtn(){
+window.scrollTo({
+top:0,
+behavior:"smooth"
+});
+}
+
+</script>
+
+
+</body>
+</html>
+
+
+
