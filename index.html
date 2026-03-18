@@ -510,7 +510,7 @@ automatically tracks deviations and generates inspection-ready reports.
 
 <div class="hero-right">
 
-<img src="c.jpeg" alt="Inspection AI Food Safety Platform">
+<img src="ihome.jpeg" alt="Inspection AI Food Safety Platform">
 
 </div>
 
@@ -1363,7 +1363,7 @@ compliance reliability.
 
 <div class="platform-card">
 
-<img src="p10.jpeg" class="platform-img">
+<img src="i12.jpeg" class="platform-img">
 
 <h3>Risk Analytics & Dashboards</h3>
 
@@ -2141,11 +2141,11 @@ btn.innerHTML = "−";
 <div class="company-divider"></div>
 
 <p class="contact-text">
-Inspection AI is a mobile-first Food Safety Management System that digitizes HACCP-based monitoring for hospitality businesses. Our platform replaces paper records with real-time digital workflows and evidence-based compliance tracking.
+Inspection AI is a mobile-first Food Safety Management System that digitizes HACCP-based monitoring for hospitality businesses.
 </p>
 
 <p class="contact-text">
-Using automated tasks, photo verification, and AI-assisted monitoring, Inspection AI helps restaurants and food businesses maintain food safety standards while reducing administrative workload and improving inspection readiness.
+Using automated tasks, photo verification, and AI-assisted monitoring, Inspection AI helps businesses maintain compliance and reduce workload.
 </p>
 
 <div class="contact-info">
@@ -2162,7 +2162,7 @@ Using automated tasks, photo verification, and AI-assisted monitoring, Inspectio
 
 <div class="info-item">
 <strong>Address:</strong>
-<span>162 West Way, Stafford, United Kingdom</span>
+<span>162 West Way, Stafford, UK</span>
 </div>
 
 </div>
@@ -2173,24 +2173,30 @@ Using automated tasks, photo verification, and AI-assisted monitoring, Inspectio
 <!-- RIGHT SIDE FORM -->
 <div class="contact-right">
 
-<form class="contact-form"
+<form class="contact-form" id="contactForm"
 action="https://api.web3forms.com/submit"
 method="POST">
 
-<input type="hidden" name="03bbf7f1-e530-48d2-a135-1da83f04be40"
-value="YOUR_ACCESS_KEY">
+<!-- ✅ CORRECT KEY -->
+<input type="hidden" name="access_key"
+value="03bbf7f1-e530-48d2-a135-1da83f04be40">
 
 <input type="text" name="name" placeholder="Full Name" required>
 <input type="email" name="email" placeholder="Business Email" required>
 <input type="tel" name="phone" placeholder="Phone Number">
 
 <textarea name="message" rows="4"
-placeholder="Tell us about your food safety requirements or project"></textarea>
+placeholder="Tell us about your food safety requirements"></textarea>
 
-<button type="submit">Send Message</button>
+<button type="submit" id="submitBtn">
+<span class="btn-text">Send Message</span>
+<span class="loader"></span>
+</button>
+
+<p class="form-status"></p>
 
 <p class="note">
-Your message will be securely delivered to the Inspection AI solutions team.
+Your message will be securely delivered to the Inspection AI team.
 </p>
 
 </form>
@@ -2210,33 +2216,25 @@ Your message will be securely delivered to the Inspection AI solutions team.
 --darkblue:#00008B;
 --brown:#513B1C;
 --text:#444;
---white:#ffffff;
 }
 
-
 /* SECTION */
-
 .contact-section{
 padding:120px 8%;
-background:#ffffff;
+background:#fff;
 font-family:'Segoe UI',sans-serif;
 }
 
-
 /* CONTAINER */
-
 .contact-container{
 max-width:1100px;
 margin:auto;
 display:grid;
 grid-template-columns:1fr 1fr;
 gap:70px;
-align-items:flex-start;
 }
 
-
 /* LEFT */
-
 .contact-left h2{
 font-size:36px;
 color:var(--darkblue);
@@ -2247,16 +2245,13 @@ margin-bottom:20px;
 color:var(--text);
 line-height:1.8;
 margin-bottom:16px;
-max-width:460px;
 }
 
-
-/* INFO BOX */
-
+/* INFO */
 .contact-info{
 margin-top:30px;
 padding:22px;
-background:linear-gradient(135deg,#ADD8E6,#ffffff,#ADD8E6);
+background:linear-gradient(135deg,#ADD8E6,#fff,#ADD8E6);
 border-left:4px solid var(--brown);
 border-radius:6px;
 }
@@ -2264,134 +2259,122 @@ border-radius:6px;
 .info-item{
 margin-bottom:12px;
 font-size:14px;
-color:#333;
 }
-
-.info-item strong{
-color:var(--darkblue);
-margin-right:6px;
-}
-
 
 /* FORM */
-
 .contact-form{
 display:flex;
 flex-direction:column;
 gap:14px;
-background:linear-gradient(135deg,#ADD8E6,#ffffff);
+background:linear-gradient(135deg,#ADD8E6,#fff);
 padding:35px;
 border-radius:10px;
-border:1px solid #e5e5e5;
 box-shadow:0 10px 25px rgba(0,0,0,0.06);
 }
 
-
 /* INPUT */
-
 .contact-form input,
 .contact-form textarea{
 padding:13px;
 border:1px solid #ddd;
-font-size:14px;
-outline:none;
-background:white;
 border-radius:5px;
 }
 
-
-/* FOCUS */
-
-.contact-form input:focus,
-.contact-form textarea:focus{
-border-color:var(--darkblue);
-box-shadow:0 0 0 2px rgba(0,0,139,0.2);
-}
-
-
 /* BUTTON */
-
 .contact-form button{
-margin-top:10px;
 background:linear-gradient(135deg,#ADD8E6,#00008B,#513B1C);
-color:white;
+color:#fff;
 border:none;
 padding:14px;
-font-weight:600;
-letter-spacing:1px;
 cursor:pointer;
-transition:0.3s;
 border-radius:6px;
+display:flex;
+align-items:center;
+justify-content:center;
+gap:10px;
 }
 
-.contact-form button:hover{
-opacity:0.9;
-transform:translateY(-2px);
+/* LOADER */
+.loader{
+width:18px;
+height:18px;
+border:3px solid #fff;
+border-top:3px solid transparent;
+border-radius:50%;
+display:none;
+animation:spin 1s linear infinite;
 }
 
-
-/* DIVIDER */
-
-.company-divider{
-width:60px;
-height:3px;
-background:linear-gradient(135deg,#ADD8E6,#00008B,#513B1C);
-margin:8px 0 14px 0;
-border-radius:2px;
+@keyframes spin{
+to{transform:rotate(360deg);}
 }
 
-
-/* NOTE */
-
-.note{
-font-size:12px;
-color:#666;
-margin-top:10px;
+/* STATUS */
+.form-status{
+font-size:13px;
+margin-top:5px;
 }
 
+/* SUCCESS */
+.success{
+color:green;
+}
+
+/* ERROR */
+.error{
+color:red;
+}
 
 /* MOBILE */
-
 @media(max-width:900px){
-
 .contact-container{
 grid-template-columns:1fr;
-gap:40px;
 }
-
-.contact-left{
-display:flex;
-flex-direction:column;
-align-items:center;
-text-align:center;
-}
-
-.company-divider{
-margin:16px auto 20px auto;
-}
-
-.contact-text{
-margin:auto;
-max-width:500px;
-}
-
-.contact-info{
-text-align:left;
-margin-top:30px;
-}
-
 }
 
 </style>
 
 
-
 <script>
 
-const form = document.querySelector(".contact-form");
+const form = document.getElementById("contactForm");
+const btn = document.getElementById("submitBtn");
+const loader = document.querySelector(".loader");
+const statusMsg = document.querySelector(".form-status");
 
-form.addEventListener("submit", function(){
-alert("Message Sent Successfully!");
+form.addEventListener("submit", async function(e){
+e.preventDefault();
+
+loader.style.display = "inline-block";
+btn.disabled = true;
+statusMsg.innerHTML = "";
+
+const data = new FormData(form);
+
+try{
+const response = await fetch(form.action,{
+method:"POST",
+body:data
+});
+
+const result = await response.json();
+
+if(result.success){
+statusMsg.innerHTML = "✅ Message sent successfully!";
+statusMsg.className = "form-status success";
+form.reset();
+}else{
+throw new Error("Failed");
+}
+
+}catch(err){
+statusMsg.innerHTML = "❌ Something went wrong. Try again.";
+statusMsg.className = "form-status error";
+}
+
+loader.style.display = "none";
+btn.disabled = false;
+
 });
 
 </script>
